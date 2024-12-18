@@ -1,0 +1,7 @@
+.header {
+  border-bottom: 1px solid #f2f4f7;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}

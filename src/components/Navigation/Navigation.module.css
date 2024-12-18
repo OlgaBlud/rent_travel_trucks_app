@@ -1,0 +1,17 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.navLink {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--main);
+}
+.navLinkActive {
+  color: var(--button-hover);
+}
