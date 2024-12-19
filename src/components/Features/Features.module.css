@@ -1,0 +1,18 @@
+.featuresList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.featureItem {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  padding: 12px 18px;
+  background: var(--badges);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main);
+}

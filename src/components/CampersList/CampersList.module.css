@@ -1,0 +1,11 @@
+.campersListItem {
+  border: 1px solid var(--gray-light);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.campersListItem:last-child {
+  margin-bottom: 0;
+}
