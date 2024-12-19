@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { apiGetAllCampers } from "./operations";
+import { apiGetAllCampers, apiGetCamperById } from "./operations";
 const INITIAL_STATE = {
   allCampers: [],
   isLoading: false,
   error: null,
+  camperDetails: null,
 };
 const handlePending = (state) => {
   state.isLoading = true;
@@ -25,6 +26,14 @@ const campersSlice = createSlice({
         state.error = null;
         state.allCampers = payload.items;
       })
-      .addCase(apiGetAllCampers.rejected, handleRejected),
+      .addCase(apiGetAllCampers.rejected, handleRejected)
+      .addCase(apiGetCamperById.pending, handlePending)
+      .addCase(apiGetCamperById.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = null;
+        console.log(payload);
+        state.camperDetails = payload;
+      })
+      .addCase(apiGetCamperById.rejected, handleRejected),
 });
 export const campersReducer = campersSlice.reducer;

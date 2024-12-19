@@ -1,8 +1,8 @@
 import css from "./ReviewAndLocation.module.css";
 import icons from "../../assets/sprite.svg";
-function ReviewAndLocation({ rating, ratesTotal, location }) {
+function ReviewAndLocation({ margin, rating, ratesTotal, location }) {
   return (
-    <div className={css.wrapper}>
+    <div className={`${css.wrapper} ${css[margin]}`}>
       <div className={css.reviewWrap}>
         <svg width="16" height="16">
           <use href={`${icons}#star`} />

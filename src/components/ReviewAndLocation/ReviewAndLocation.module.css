@@ -1,7 +1,6 @@
 .wrapper {
   display: flex;
   gap: 16px;
-  margin-bottom: 24px;
 }
 
 .reviewWrap,
@@ -9,4 +8,10 @@
   display: flex;
   gap: 4px;
   align-items: center;
+}
+.details {
+  margin-bottom: 16px;
+}
+.listItem {
+  margin-bottom: 24px;
 }

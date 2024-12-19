@@ -5,6 +5,7 @@ import ReviewAndLocation from "../ReviewAndLocation/ReviewAndLocation";
 import css from "./CamperItem.module.css";
 import { selectFavoritesCampers } from "../../redux/favorites/selectors";
 import { toggleFavorite } from "../../redux/favorites/slice";
+import { Link } from "react-router";
 
 function CamperItem({ camper }) {
   const dispatch = useDispatch();
@@ -41,12 +42,16 @@ function CamperItem({ camper }) {
           </div>
         </div>
         <ReviewAndLocation
+          margin="listItem"
           rating={camper.rating}
           ratesTotal={camper.reviews.length}
           location={camper.location}
         />
         <p className={css.camperDescription}>{camper.description}</p>
         <Features camper={camper} />
+        <Link className={css.linkCamperId} to={`/catalog/${camper.id}`}>
+          Show more
+        </Link>
       </div>
     </>
   );

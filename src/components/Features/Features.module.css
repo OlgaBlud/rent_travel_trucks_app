@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 24px;
 }
 .featureItem {
   display: flex;
@@ -15,4 +16,5 @@
   font-size: 16px;
   line-height: 1.5;
   color: var(--main);
+  mix-blend-mode: multiply;
 }
