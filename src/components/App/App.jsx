@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
 import AppBar from "../AppBar/AppBar";
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 // import HomePage from "../../pages/HomePage/HomePage";
 // import CampersCatalogPage from "../../pages/CampersCatalogPage/CampersCatalogPage";
 // import CamperDetailsPage from "../../pages/CamperDetailsPage/CamperDetailsPage";
@@ -25,15 +25,18 @@ function App() {
   return (
     <>
       <AppBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/catalog" element={<CampersCatalogPage />} />
-        <Route path="/catalog/:id" element={<CamperDetailsPage />}>
-          <Route path="features" element={<CamperFeatures />}></Route>
-          <Route path="reviews" element={<CamperReviews />}></Route>
-        </Route>
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<CampersCatalogPage />} />
+          <Route path="/catalog/:id" element={<CamperDetailsPage />}>
+            <Route index element={<CamperFeatures />} />
+            <Route path="features" element={<CamperFeatures />}></Route>
+            <Route path="reviews" element={<CamperReviews />}></Route>
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </>
   );
 }
