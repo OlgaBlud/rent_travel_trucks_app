@@ -9,9 +9,9 @@ function CamperReviews() {
   const starsMax = 5;
   const getStarColor = (index, rating) => {
     if (index < rating) {
-      return "#ffc531"; // Цвет для заполненных звезд
+      return "#ffc531";
     }
-    return "#f2f4f7"; // Цвет для пустых звезд
+    return "#f2f4f7";
   };
   return (
     <div className={css.reviewsWrap}>

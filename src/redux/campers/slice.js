@@ -31,7 +31,7 @@ const campersSlice = createSlice({
       .addCase(apiGetCamperById.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        console.log(payload);
+        // console.log(payload);
         state.camperDetails = payload;
       })
       .addCase(apiGetCamperById.rejected, handleRejected),

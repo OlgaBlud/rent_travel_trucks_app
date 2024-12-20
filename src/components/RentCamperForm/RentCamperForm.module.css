@@ -1,0 +1,79 @@
+.formWrap {
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+  padding: 44px;
+  max-width: 641px;
+  width: calc((100% - 50px) / 2);
+}
+.formTitle {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+}
+.formText {
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.field,
+.fieldMsg,
+.inputDate {
+  border: none;
+  border-radius: 12px;
+  padding: 18px;
+  background-color: var(--inputs);
+  outline: transparent;
+}
+
+.inputDate,
+.field {
+  width: 100%;
+}
+
+.fieldMsg {
+  resize: none;
+  height: 118px;
+}
+.inputWrap {
+  position: relative;
+}
+.errorMsg {
+  position: absolute;
+  top: 52px;
+  left: 0;
+}
+.errorMsg,
+.errorDateMsg {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--button);
+}
+
+.submitBtn {
+  display: block;
+  border-radius: 200px;
+  padding: 16px 60px;
+  min-width: 166px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: var(--button);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+.submitBtn:hover {
+  background-color: var(--button-hover);
+}

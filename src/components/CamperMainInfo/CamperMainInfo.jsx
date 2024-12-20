@@ -7,7 +7,7 @@ import RentCamperForm from "../RentCamperForm/RentCamperForm";
 import clsx from "clsx";
 function CamperMainInfo() {
   const camper = useSelector(selectCamperDetails);
-  console.log(camper);
+  // console.log(camper);
   const linkClass = ({ isActive }) => {
     return clsx(css.link, isActive && css.linkActive);
   };

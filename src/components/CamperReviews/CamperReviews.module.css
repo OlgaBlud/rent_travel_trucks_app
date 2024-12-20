@@ -1,5 +1,6 @@
 .reviewsWrap {
   max-width: 631px;
+  width: calc((100% - 50px) / 2);
 }
 .reviewList {
   display: flex;

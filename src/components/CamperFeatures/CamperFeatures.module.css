@@ -1,7 +1,8 @@
 .featuresWrap {
   border-radius: 10px;
   padding: 44px 80px;
-  width: 631px;
+  max-width: 631px;
+  width: calc((100% - 50px) / 2);
   /* height: 588px; */
   background-color: var(--inputs);
 }
