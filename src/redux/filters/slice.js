@@ -1,9 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const campersSlice = createSlice({
+const initialState = {
+  filters: null,
+};
+
+const filtersSlice = createSlice({
   name: "filters",
-  initialState: {
-    items: [],
+  initialState,
+  reducers: {
+    setFilters(state, action) {
+      state.filters = action.payload;
+    },
+    resetFilters(state) {
+      state.filters = initialState.filters;
+    },
   },
-  reducers: {},
 });
+
+export const { setFilters, resetFilters } = filtersSlice.actions;
+export const filtersReducer = filtersSlice.reducer;

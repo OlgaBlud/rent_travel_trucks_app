@@ -9,6 +9,20 @@ export const apiGetAllCampers = createAsyncThunk(
       const { data } = await axios.get(`/campers?page=${page}&limit=${limit}`);
       // console.log("data: ", data);
       return data;
+
+      // let filterParams = "";
+      // if (filters) {
+      //   Object.keys(filters).forEach((key) => {
+      //     const value = filters[key];
+      //     if (value !== null && value !== "") {
+      //       filterParams += `&${key}=${value}`;
+      //     }
+      //   });
+      // }
+      // const { data } = await axios.get(
+      //   `/campers?page=${page}&limit=${limit}${filterParams}`
+      // );
+      // return data;
     } catch (error) {
       console.log(error);
       thunkAPI.rejectWithValue(error.message);
