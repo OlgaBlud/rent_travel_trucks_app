@@ -7,7 +7,7 @@ import { apiGetAllCampers } from "../../redux/campers/operations";
 function CampersCatalogPage() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(apiGetAllCampers());
+    dispatch(apiGetAllCampers({ page: 1, limit: 3 }));
   }, [dispatch]);
   return (
     <main>

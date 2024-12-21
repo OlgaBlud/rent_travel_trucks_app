@@ -5,6 +5,8 @@ const INITIAL_STATE = {
   isLoading: false,
   error: null,
   camperDetails: null,
+  page: 1,
+  total: 0,
 };
 const handlePending = (state) => {
   state.isLoading = true;
@@ -18,13 +20,31 @@ const handleRejected = (state, { payload }) => {
 const campersSlice = createSlice({
   name: "campers",
   initialState: INITIAL_STATE,
+  reducers: {
+    incrementPage(state) {
+      state.page += 1;
+    },
+    resetCampers(state) {
+      state.allCampers = [];
+      state.page = 1;
+    },
+  },
   extraReducers: (builder) =>
     builder
       .addCase(apiGetAllCampers.pending, handlePending)
       .addCase(apiGetAllCampers.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        state.allCampers = payload.items;
+        const newCampers = payload.items;
+        const uniqueCampers = [
+          ...state.allCampers,
+          ...newCampers.filter(
+            (newCamper) =>
+              !state.allCampers.some((camper) => camper.id === newCamper.id)
+          ),
+        ];
+        state.allCampers = uniqueCampers;
+        state.total = payload.total;
       })
       .addCase(apiGetAllCampers.rejected, handleRejected)
       .addCase(apiGetCamperById.pending, handlePending)
@@ -36,4 +56,6 @@ const campersSlice = createSlice({
       })
       .addCase(apiGetCamperById.rejected, handleRejected),
 });
+
+export const { incrementPage, resetCampers } = campersSlice.actions;
 export const campersReducer = campersSlice.reducer;
