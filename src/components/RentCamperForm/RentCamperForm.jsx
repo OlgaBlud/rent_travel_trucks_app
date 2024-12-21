@@ -3,7 +3,7 @@ import css from "./RentCamperForm.module.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import * as Yup from "yup";
-// import iziToast from "izitoast";
+import { toast, ToastContainer } from "react-toastify";
 
 function RentCamperForm() {
   const RentRequestSchema = Yup.object().shape({
@@ -24,13 +24,9 @@ function RentCamperForm() {
     message: "",
   };
   const handleSubmit = (values, actions) => {
-    console.log(values);
+    toast("We will contact you soon!");
+    // console.log(values);
     actions.resetForm();
-    // iziToast.success({
-    //   title: "Hey",
-    //   message: "What would you like to add?",
-    //   position: "center",
-    // });
   };
 
   return (
@@ -99,6 +95,7 @@ function RentCamperForm() {
           </Form>
         )}
       </Formik>
+      <ToastContainer />
     </div>
   );
 }

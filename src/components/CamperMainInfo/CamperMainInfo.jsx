@@ -20,7 +20,7 @@ function CamperMainInfo() {
         ratesTotal={camper.reviews.length}
         location={camper.location}
       />
-      <p className={css.camperPrice}>{`€ ${camper.price}`}</p>
+      <p className={css.camperPrice}>{`€ ${camper.price.toFixed(2)}`}</p>
 
       {camper.gallery.length > 0 ? (
         <ul className={css.gallery}>

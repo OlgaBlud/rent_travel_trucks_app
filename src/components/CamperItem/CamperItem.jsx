@@ -29,7 +29,7 @@ function CamperItem({ camper }) {
         <div className={css.camperCardHeader}>
           <h2 className={css.camperName}>{camper.name}</h2>
           <div className={css.priceWrap}>
-            <p className={css.camperPrice}>{`€ ${camper.price}`}</p>
+            <p className={css.camperPrice}>{`€ ${camper.price.toFixed(2)}`}</p>
             <svg
               width="26"
               height="24"

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 import "./App.css";
 import AppBar from "../AppBar/AppBar";
 import { lazy, Suspense } from "react";
+import Loader from "../Loader/Loader";
 // import HomePage from "../../pages/HomePage/HomePage";
 // import CampersCatalogPage from "../../pages/CampersCatalogPage/CampersCatalogPage";
 // import CamperDetailsPage from "../../pages/CamperDetailsPage/CamperDetailsPage";
@@ -25,7 +26,7 @@ function App() {
   return (
     <>
       <AppBar />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<CampersCatalogPage />} />
